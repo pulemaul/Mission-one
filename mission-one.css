@@ -1,0 +1,275 @@
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding-top: 60px; /
+    background-color: #fafafa; 
+    display: flex;
+}
+
+
+nav {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #f4f4f4;
+    transform: scale(1.1); 
+}
+
+aside {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    width: 250px;
+    position: fixed;
+    top: 60px; 
+    bottom: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+aside h2 {
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+aside ul li a:hover {
+    color: #f4f4f4;
+}
+
+
+main {
+    margin-left: 270px; 
+    padding: 20px;
+    flex: 1;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em; 
+}
+
+.main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    margin-bottom: 20px;
+}
+
+.content section {
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+.content article {
+    margin-bottom: 20px;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+
+.builds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.builds .build {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1 1 calc(33.333% - 20px); 
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.builds .build:hover {
+    transform: scale(1.05); 
+}
+
+.builds img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.builds h3 {
+    margin: 10px 0;
+}
+
+
+form {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    max-width: 600px;
+    margin: 0 auto; 
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: calc(100% - 16px); 
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #555;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    aside {
+        width: 200px;
+        top: 60px; 
+    }
+
+    main {
+        margin-left: 220px; 
+    }
+
+    nav a {
+        font-size: 1em;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .builds .build {
+        flex: 1 1 calc(50% - 20px); 
+    }
+
+    form {
+        width: 90%; 
+    }
+}
+
+@media (max-width: 480px) {
+    aside {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .builds .build {
+        flex: 1 1 100%; 
+    }
+}
